@@ -1,0 +1,15 @@
+{
+  "welcome": "مرحباً بكم في ألعاب الرياضيات!",
+  "selectGame": "اختر لعبة",
+  "addition": "جمع",
+  "subtraction": "طرح",
+  "multiplication": "ضرب",
+  "division": "قسمة",
+  "score": "النتيجة",
+  "streak": "سلسلة",
+  "level": "المستوى",
+  "play": "العب",
+  "correct": "رائع!",
+  "incorrect": "حاول مرة أخرى!",
+  "back": "رجوع"
+}

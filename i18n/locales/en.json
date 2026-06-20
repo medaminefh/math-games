@@ -1,0 +1,15 @@
+{
+  "welcome": "Welcome to Math Games!",
+  "selectGame": "Select a Game",
+  "addition": "Addition",
+  "subtraction": "Subtraction",
+  "multiplication": "Multiplication",
+  "division": "Division",
+  "score": "Score",
+  "streak": "Streak",
+  "level": "Level",
+  "play": "Play",
+  "correct": "Awesome!",
+  "incorrect": "Try Again!",
+  "back": "Back"
+}

@@ -1,0 +1,15 @@
+{
+  "welcome": "Bienvenue aux Jeux de Mathématiques !",
+  "selectGame": "Sélectionnez un Jeu",
+  "addition": "Addition",
+  "subtraction": "Soustraction",
+  "multiplication": "Multiplication",
+  "division": "Division",
+  "score": "Score",
+  "streak": "Série",
+  "level": "Niveau",
+  "play": "Jouer",
+  "correct": "Génial !",
+  "incorrect": "Essaie encore !",
+  "back": "Retour"
+}
