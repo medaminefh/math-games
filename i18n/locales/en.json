@@ -15,6 +15,7 @@
   "challengeMode": "Challenge Mode",
   "challengeDesc": "Mixed Operations Challenge",
   "selectOperations": "Select Operations to Include",
+  "operandCount": "Number of Numbers",
   "startChallenge": "Start Challenge",
   "minOneOperation": "Please select at least one operation to start."
 }

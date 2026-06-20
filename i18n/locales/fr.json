@@ -15,6 +15,7 @@
   "challengeMode": "Mode Défi",
   "challengeDesc": "Défi des Opérations Mixtes",
   "selectOperations": "Sélectionner les opérations à inclure",
+  "operandCount": "Nombre de Nombres",
   "startChallenge": "Commencer le Défi",
   "minOneOperation": "Veuillez sélectionner au moins une opération."
 }

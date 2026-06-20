@@ -86,8 +86,11 @@ export function useMathEngine() {
     }
   }
 
-  const generateMixedProblem = (allowedOps: Operation[], level: number): MixedMathProblem => {
-    const numOperands = Math.min(5, 2 + Math.ceil(level / 3))
+  const generateMixedProblem = (allowedOps: Operation[], level: number, maxOperandCount?: number): MixedMathProblem => {
+    const maxAllowed = maxOperandCount || Math.min(5, 2 + Math.ceil(level / 3))
+    const minOps = Math.min(3, maxAllowed)
+    const numOperands = Math.floor(Math.random() * (maxAllowed - minOps + 1)) + minOps
+    
     const maxVal = Math.min(20, level * 5)
     
     let expression: (number | string)[] = []

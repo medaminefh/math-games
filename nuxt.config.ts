@@ -38,7 +38,15 @@ export default defineNuxtConfig({
       titleTemplate: '%s - Math Games',
       title: 'Kids Math',
       meta: [
-        { name: 'description', content: 'Fun and educational math games for kids.' }
+        { name: 'description', content: 'Fun and educational math games for kids.' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no' },
+        { name: 'mobile-web-app-capable', content: 'yes' },
+        { name: 'apple-mobile-web-app-capable', content: 'yes' },
+        { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
+        { name: 'theme-color', content: '#FF5722' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
       ]
     }
   },

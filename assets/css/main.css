@@ -3,9 +3,47 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
     @apply bg-slate-50 text-slate-800 antialiased selection:bg-primary-light selection:text-white;
     font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  /* Custom range slider styling for better touch targets */
+  input[type="range"] {
+    @apply h-3 sm:h-4;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 9999px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #FF5722;
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #FF5722;
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -15,5 +53,13 @@
   }
   .ltr {
     direction: ltr;
+  }
+  /* Force LTR for math expressions even in RTL mode */
+  .dir-ltr {
+    direction: ltr;
+  }
+  /* Safe area padding for notched phones */
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 16px);
   }
 }
