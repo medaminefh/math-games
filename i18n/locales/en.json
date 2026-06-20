@@ -11,5 +11,10 @@
   "play": "Play",
   "correct": "Awesome!",
   "incorrect": "Try Again!",
-  "back": "Back"
+  "back": "Back",
+  "challengeMode": "Challenge Mode",
+  "challengeDesc": "Mixed Operations Challenge",
+  "selectOperations": "Select Operations to Include",
+  "startChallenge": "Start Challenge",
+  "minOneOperation": "Please select at least one operation to start."
 }

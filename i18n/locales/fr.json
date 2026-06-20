@@ -11,5 +11,10 @@
   "play": "Jouer",
   "correct": "Génial !",
   "incorrect": "Essaie encore !",
-  "back": "Retour"
+  "back": "Retour",
+  "challengeMode": "Mode Défi",
+  "challengeDesc": "Défi des Opérations Mixtes",
+  "selectOperations": "Sélectionner les opérations à inclure",
+  "startChallenge": "Commencer le Défi",
+  "minOneOperation": "Veuillez sélectionner au moins une opération."
 }

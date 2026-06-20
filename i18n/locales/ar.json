@@ -11,5 +11,10 @@
   "play": "العب",
   "correct": "رائع!",
   "incorrect": "حاول مرة أخرى!",
-  "back": "رجوع"
+  "back": "رجوع",
+  "challengeMode": "وضع التحدي",
+  "challengeDesc": "تحدي العمليات المختلطة",
+  "selectOperations": "حدد العمليات التي تريد تضمينها",
+  "startChallenge": "ابدأ التحدي",
+  "minOneOperation": "يرجى تحديد عملية واحدة على الأقل."
 }

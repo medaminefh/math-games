@@ -25,6 +25,26 @@
         </div>
       </NuxtLink>
     </div>
+
+    <!-- Challenge Mode Card -->
+    <div class="mt-8 w-full max-w-4xl px-4 gs-challenge">
+      <NuxtLink 
+        :to="localePath(`/games/${challengeMode.id}`)"
+        class="group relative bg-gradient-to-r from-amber-400 to-orange-500 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-b-8 border-orange-600 active:translate-y-2 active:border-b-0 cursor-pointer flex items-center justify-between"
+      >
+        <div class="flex items-center gap-6">
+          <div class="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center text-4xl text-white shadow-inner">
+            {{ challengeMode.symbol }}
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-white group-hover:text-amber-50 transition-colors drop-shadow-sm">
+              {{ t('challengeMode') }}
+            </h2>
+            <p class="text-amber-100 font-bold mt-1">{{ t('challengeDesc') }}</p>
+          </div>
+        </div>
+      </NuxtLink>
+    </div>
   </div>
 </template>
 
@@ -48,6 +68,8 @@ const modes = [
   { id: 'division', symbol: '÷', color: '#9C27B0' },
 ]
 
+const challengeMode = { id: 'challenge-setup', symbol: '★', color: '#F59E0B' }
+
 onMounted(() => {
   const tl = gsap.timeline()
   tl.fromTo('.gs-title', { y: -50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'back.out(1.7)' })
@@ -56,6 +78,11 @@ onMounted(() => {
       { y: 50, opacity: 0, scale: 0.9 }, 
       { y: 0, opacity: 1, scale: 1, duration: 0.5, stagger: 0.1, ease: 'back.out(1.5)' },
       '-=0.3'
+    )
+    .fromTo('.gs-challenge', 
+      { y: 30, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 0.5, ease: 'back.out(1.5)' },
+      '-=0.2'
     )
 })
 </script>

@@ -8,6 +8,12 @@ export interface MathProblem {
   options: number[]
 }
 
+export interface MixedMathProblem {
+  expression: (number | string)[]
+  answer: number
+  options: number[]
+}
+
 export function useMathEngine() {
   const generateProblem = (operation: Operation, level: number): MathProblem => {
     let num1 = 0
@@ -80,8 +86,60 @@ export function useMathEngine() {
     }
   }
 
+  const generateMixedProblem = (allowedOps: Operation[], level: number): MixedMathProblem => {
+    const numOperands = Math.min(5, 2 + Math.ceil(level / 3))
+    const maxVal = Math.min(20, level * 5)
+    
+    let expression: (number | string)[] = []
+    let answer = -1
+    
+    // We'll retry until we get a clean positive integer answer
+    while (answer < 0 || !Number.isInteger(answer)) {
+      expression = []
+      let jsExpression = ''
+      
+      let currentVal = Math.floor(Math.random() * maxVal) + 1
+      expression.push(currentVal)
+      jsExpression += currentVal
+      
+      for (let i = 1; i < numOperands; i++) {
+        const op = allowedOps[Math.floor(Math.random() * allowedOps.length)]
+        let nextVal = Math.floor(Math.random() * maxVal) + 1
+        
+        // Help ensure division is somewhat clean by occasionally forcing multiples,
+        // but we'll just rely on the retry loop to filter out decimals for simplicity.
+        // Actually, if division, let's just make the next value a random 1-10.
+        if (op === 'division') {
+            nextVal = Math.floor(Math.random() * 10) + 1
+        }
+        
+        const symbol = getOperationSymbol(op)
+        expression.push(symbol)
+        expression.push(nextVal)
+        
+        const jsOp = op === 'addition' ? '+' : op === 'subtraction' ? '-' : op === 'multiplication' ? '*' : '/'
+        jsExpression += ` ${jsOp} ${nextVal}`
+      }
+      
+      try {
+        answer = Function(`"use strict"; return (${jsExpression})`)()
+      } catch (e) {
+        answer = -1
+      }
+    }
+
+    const options = generateOptions(answer, allowedOps[0] || 'addition', maxVal)
+
+    return {
+      expression,
+      answer,
+      options
+    }
+  }
+
   return {
     generateProblem,
+    generateMixedProblem,
     getOperationSymbol
   }
 }
